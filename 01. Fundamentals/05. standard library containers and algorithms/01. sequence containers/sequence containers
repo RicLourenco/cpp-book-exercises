@@ -1,0 +1,13 @@
+array: fixed-size array, fast random access, no addition or deletion operation
+
+vector: variable-size array, fast random access, addition and deletion supported,
+append is fast while inserting into a given position is slow
+
+deque: double-ended queue, fast random access, insertion and deletion operations
+only at front and back of the queue
+
+list: doubly linked list, sequential access in both directions, insertion and
+deletion operations are fast
+
+forward-list: singly linked list, sequential access in the forward direction,
+insertion and deletion operations are fast

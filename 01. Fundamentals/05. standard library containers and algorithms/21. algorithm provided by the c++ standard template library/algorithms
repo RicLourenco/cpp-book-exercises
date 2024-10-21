@@ -1,0 +1,18 @@
+algorithms are a way to operate on containers in an abstract way
+the c++ stl provides algorithms for for all the common operations on ranges
+of elements
+because algorithms accept iterators, they can operate on any container, even
+use-defined containers, as long as they provide iterators
+this allows having a large number of algorithms that operate on a large number
+of containers, without the need for the algorithm to know how the container
+is implemented
+
+note:
+algorithms operate on ranges, so they normally take a pair of iterators: first
+and last
+again, the last iterator is the element past the end of the range, it's not
+a part of the range
+this means that when we want to operate on a full container, we can pass
+begin() and end() as arguments to the algorithm, but if we want to operate on
+a shorter sequence, we must make sure that our last iterator is past the range
+of the sequence

@@ -1,0 +1,34 @@
+Additional container classes that are provided by the STL library are container adaptors.
+Container adaptors provide constrained access policies on top of the containers we have
+looked at. Container adaptors have a template parameter that the user can provide to
+specify the type of container to wrap
+
+container adaptors:
+    stack: container with the LIFO (last-in-first-out) access policy. by default it wraps
+    a deque
+
+    queue: container with the FIFO (first-in-first-out) access policy. by default it
+    wraps a deque
+
+    priority queue: container in which the elements have a priority associated; the 
+    container is accessed as a queue where the next element is the highest in priority.
+    by default it wraps a vector
+
+stack: in this container the elements are stacked on top of each other so the last element
+is always on top. elements are always read and removed from the top, so the last element
+is always the last read or removed. has three member function: push() to insert an element
+on top of the stack, top() to get the element on top, and pop() to removed the element on
+top. is defined in the <stack> header
+
+queue: elements are enqueued one after the other, so elements inserted before are after
+elements inserted after. elements are inserted at the end of the queue and inserted at the
+start. push() inserts an element, front() and back() return the next and last elements of
+the queue respectively, pop() removes the next element of the queue. defined in the
+<queue> header
+
+priority queue: queue where elements are accessed are accessed according to their priority
+in descending order. the class methods are similar to queue, the difference is the way
+the next element is determined. by default the priority of the elements is computed by
+comparing elements with the < operator. this comparator can also be custom defined by the
+programmer. also included in the <queue> header
+

@@ -1,0 +1,32 @@
+unordered containers don't accept a comparator to provide an order to the elements
+all unordered containers depend on a hash function
+users can provide a functor as param to specify how the keys should be hashed
+
+unordered containers:
+    unordered set: a container in which elements are unsorted; elements are all
+    distinct values
+
+    unordered multiset: same as unordered set, but duplicates are allowed
+    
+    unordered map: a container in which elements are unsorted key-value pairs;
+    each key may occur only once
+
+    unordered multimap: same as unordered map, but keys can be duplicated
+
+typically unordered containers are implemented as hash tables. the position in the
+array is determined using the hash function, which given a value returns the position
+at which it should be stored. Ideally, most of the elements will be mapped into
+different positions, but the hash function can potentially return the same position
+for different elements. This is called a collision. This problem is solved by using
+linked lists to chain elements that map into the same position, so that multiple
+elements can be stored in the same position. Because there might be multiple elements
+at the same position, the position is often called bucket
+
+when an element/key-value is added to the set/map, its hash value is computed to decide
+in which bucket the element/key-value the should be stored in. the elements/key-values
+stored inside a bucket are called nodes
+
+Unordered associative containers and ordered associative containers provide the same
+functionalities, and the explanations in the previous section apply to the unordered
+associative containers as well. Unordered associative containers can be used to get
+better performances when the order of the elements is not important

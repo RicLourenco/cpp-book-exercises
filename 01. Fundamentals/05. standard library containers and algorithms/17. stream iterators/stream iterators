@@ -1,0 +1,8 @@
+stream iterators allow to use streams as a source to read elements from or as 
+a destination to write elements to:
+- IStream: reads elements from an input stream
+- OStream: writes values to an output stream
+
+because there's no container in this case, the end() method cannot be called to
+get the end iterator. a default constructed stream iterator counts as the end of
+any stream range.

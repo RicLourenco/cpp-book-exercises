@@ -1,0 +1,21 @@
+associative containers are containers that allow fast lookup of elements
+
+elements always kept in sorted order
+
+the <functional> header contains objects that can be used to sort
+the associative containers
+
+associative containers:
+    set: container in which elements are sorted according to their values;
+    elements are all distinct values
+
+    multiset: same as set, but duplicates are allowed
+
+    map: containers in which elements are mapped as key-value pairs,
+    sorted by key values; each key may occur only once
+
+    multimap: same as map, but the keys can be duplicated
+
+typically associative containers are implemented as variations of binary
+trees, providing fast element lookup by exploiting the logarithmic
+complexity of the underlying structure

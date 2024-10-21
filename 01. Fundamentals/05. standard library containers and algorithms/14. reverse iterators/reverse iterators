@@ -1,0 +1,10 @@
+sometimes it's useful to iterate through a collection of elements in
+reverse order. a rverse iterator wraps a bidirectional iterator and swaps
+the increment and decrement operations.
+
+the range of a container can be reversed by calling the following methods
+on it:
+- rbegin(): returns the position of the last element of the container
+- rend(): returns the position of the first element of the container
+
+code that works on a normal iterator also works on a reverse iterator

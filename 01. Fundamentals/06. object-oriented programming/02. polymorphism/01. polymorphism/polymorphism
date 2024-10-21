@@ -1,0 +1,10 @@
+polymorphism means many forms and represents the ability of objects to behave
+in different ways
+
+templates are a kind of pattern called static polymorphism, static because it's
+known at compile time. c++ also supports dynamic polymorphism - having the
+behavior of methods change while the program is running. This is powerful
+because we can react to information we obtain only after we have compiled our
+program, such as user input, values in configurations, or the kind of hardware
+the code is running on. This is possible thanks to two features - dynamic
+binding and dynamic dispatch.

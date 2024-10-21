@@ -1,0 +1,26 @@
+After discussing asymptotic analysis and the three cases in algorithms, let's
+discuss asymptotic notation to represent the time complexity of an algorithm. There
+are three asymptotic notations that are mostly used in an algorithm; they are
+Big Theta, Big-O, and Big Omega
+
+The Big Theta notation (θ) is a notation that bounds a function from above and
+below, like we saw previously in asymptotic analysis, which also omits a constant
+from a notation
+
+Suppose we have a function with time complexity 4n + 1. Since it's a linear
+function, we can notate it like in the following code:
+f(n) = 4n + 1
+
+Now, suppose we have a function, g(n), where f(n) is the Big-Theta of g(n) if the
+value, f(n), is always between c1*g(n) (lower bound) and c2*g(n) (upper bound).
+Since f(n) has a constant of 4 in the n variable, we will take a random lower bound
+which is lower than 4, that is 3, and an upper bound which is greater than 4, that
+is 5
+
+From the f(n) time complexity, we can get the asymptotic complexity n, so then we
+have g(n) = n, which is based on the asymptotic complexity of 4n + 1. Now, we can
+decide the upper bound and lower bound for g(n) = n. Let's pick 3 for the lower
+bound and 5 for the upper bound. Now, we can manipulate the g(n) = n function:
+3.g(n) = 3.n
+5.g(n) = 5.n
+

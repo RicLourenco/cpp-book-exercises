@@ -1,0 +1,8 @@
+C++ has three data types which we can use to store specific items such as List,
+SinglyLinkedList, and DoublyLinkedList. std::vector can be used as List,
+std::forward_list can be used as SinglyLinkedList, and std::list can be used as
+DoublyLinkedList. They both have fetching, inserting, searching, and removing
+operations. However, the method names they have are different with our developed
+data type, and we are going to discuss this in this section. In this section, we
+are going to discuss std::vector and std::list only, since std::forward_list is
+similar to std::list

@@ -1,0 +1,14 @@
+also called inserters, are used to insert new values into containers rather
+than overwrite them. there are three types of inserters, which differ on the
+position in the container at which they insert elements
+
+categories:
+- back inserter: appends a value at the end of the container by calling the
+push_back() function
+- front inserter: inserts a value at the beginning of the container by calling
+the push_front() function
+- general inserts: inserts a value at a provided position of the container by
+calling the insert() function
+
+some algorithms require an iterator for storing data. insert iterator are
+usually used in such cases
