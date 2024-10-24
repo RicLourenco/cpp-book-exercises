@@ -73,3 +73,70 @@ void example_cpp()
 // // Both bagels subtly
 // // also have "oregano"
 // toppings.add("oregano");
+
+/* Const correctness
+
+An example of how we can use const member functions to prevent unintentional
+modifications of objects. In the following Person class, the member function age()
+is declared const and is therefore not allowed to mutate the Person object; whereas
+set_age() mutates the object and cannot be declared const */
+class Person
+{
+    public:
+        auto age() const
+        {
+            return _age;
+        }
+
+        auto set_age(int age) 
+        {
+            _age = age;
+        }
+
+    private:
+        int _age {};
+};
+
+/* It's also possible to distinguish between returning mutable and immutable
+references to members. In the following Team class, the member function leader()
+const returns an immutable Person; whereas leader() returns a Person object that
+may be mutated */
+class Team
+{
+    public:
+        auto& leader() const
+        {
+            return _leader;
+        }
+
+        auto& leader()
+        {
+            return _leader;
+        }
+
+    private:
+        Person _leader {};
+};
+
+/* Now let's see how the compiler can help us find errors when we try to mutate
+immutable objects. In the following example, the function argument teams is
+declared const, explicitly showing that this function is not allowed to modify
+them */
+auto non_mutating_func(const std::vector<Team>& teams)
+{
+    auto tot_age = int { 0 };
+    
+    // Compiles, both leader() and age() are declared const
+    for(const auto& team: teams) {
+        tot_age += team.leader().age();
+    }
+
+    // Doesn't compile, set_age() requires a mutable object
+    for(auto& team: teams) {
+        team.leader().set_age(20);
+    }
+
+    /* If we want to write a function which can mutate the teams object we simply
+    remove const in the parameters. This signals to the caller that this function may mutate the
+    teams ...(std::vector<Team>& teams)... */
+}
