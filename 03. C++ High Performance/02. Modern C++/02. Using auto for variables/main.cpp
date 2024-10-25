@@ -1,3 +1,8 @@
+#include <mutex>
+
+class Foo { };
+float create_object() { }
+
 int main()
 {
     // Examples
