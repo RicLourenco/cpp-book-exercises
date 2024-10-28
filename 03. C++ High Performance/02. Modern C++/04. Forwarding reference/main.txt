@@ -1,0 +1,23 @@
+auto&& is called a forwarding reference (also referred to as a universal
+reference). It can bind to anything which makes it useful for certain cases.
+Forwarding references will, just like const references, extend the lifetime of a
+temporary. But in contrast to the const reference, auto&& allows you to mutate
+objects it references, temporaries included
+
+Use auto&& for variables that you only forward to some other code. In those
+forwarding cases you rarely care about whether the variable is a const or a
+mutable, you just want to pass it to some code that actually going to use the
+variable. It's important to note that only auto&& and T&& in a template method are
+forwarding references. Using the && syntax with an explicit type, for example
+std::string&& is an r-value and does not have the properties of a forwarding
+reference (r-values and move-semantics will be discussed later in this chapter)
+
+We strongly recommend to always use const auto& when possible, this communicates
+that you simply just want to fetch a value and that nothing fishy is going on. This
+should be the case to the majority of the variable declaration in a C++ code base.
+auto& and auto should only be used when you require the behavior of a mutable
+reference or an explicit copy; this communicates to the reader of the code that
+those variables are important as they either mutate another variable, or they might
+mutate another variable if not copied. Finally, use auto&& for forwarding code only
+
+All the examples use auto is for saving space in the original book this was written
