@@ -5,7 +5,10 @@ work with, everything here is possible to perform without them by making classes
 with operator() overloaded
 
 We will explore the lambda function's similarities to these kind of classes later,
-but first let's introduce the lambda function in a simple use case
+but first let's introduce the lambda function in a simple use case */
+
+
+/* Basic syntax of a C++ lambda function
 
 In a nutshell, the lambda function capability enables programmers to pass functions
 to regular functions, just as easily as a variable is passed */
