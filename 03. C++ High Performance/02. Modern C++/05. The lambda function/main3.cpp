@@ -81,3 +81,43 @@ namespace
     auto test = is_above(5);
     /* test equals true */
 }
+
+
+/* Initializing variables in capture
+
+As seen in the previous example, the capture scope initializes member variables in
+the corresponding class. This means that we can also initialize member variables
+inside a lambda, which are only visible from inside the lambda */
+
+#include <list>
+#include <iostream>
+
+/* Lambda function... */
+auto func = [c = std::list<int>{4, 2}] ()
+{
+    for (auto v : c)
+        std::cout << v;
+};
+
+func();
+/* Output: 42
+
+... corresponding class */
+class Func
+{
+    public:
+        Func() : c{ 4, 2 } { }
+        auto operator()() const -> void
+        {
+            for (auto v : c)
+                std::cout << v;
+        }
+
+    private:
+        std::list<int> c;
+};
+
+auto func = Func { };
+
+func();
+/* Output: 42 */
